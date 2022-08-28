@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Embed your Scratch profile on your website. - Scratch Profile Embed</title>
+    <meta name="description" content="Scratch Profile Embed is a free and open-source tool that lets you embed your Scratch profile on any web page, by intgreating a given code in a webpage.">
+    <link rel="stylesheet" href="landing.css">
+  </head>
+  <body>
+    <div class="modal" id="deprecationModal">
+      <button id="deprecationModalClose" class="modal-close-button">&times;</button>
+      <div id="deprecationModalContent" class="modal-content">
+        <h1 id="deprecationModalHeader">A few words about Scratch Profile Embed</h1>
+        <p>Hi everyone, it’s been long since the last “real” changes in Scratch Profile Embed. Pull requests that are okay have not been merged, there wasn’t any activity in the Issues.  The latest commit was a removal of the chatbox on the landing, nobody used that anyways.</p>
+        <p>You pretty much all have appreciated the project. I have a majority of 😍 ratings. You helped, too. You provided constructive feedback, and made useful PRs. I also learned a lot making it.</p>
+        <p>And this is what the project mostly has been useful for. A friend pretty much described the whole thing : </p>
+        <p><img src="https://locness.duckdns.org/wp/wp-content/uploads/2020/07/Screen-Shot-2020-07-05-at-10.32.02.png" alt="" width="183" height="82"><br>Jokes apart, the project was more of something for me to learn and practice on. Some kind of experiment lab. Some people used it on their websites, and I’m really thankful for them, but I myself do not really find it useful for other people.</p>
+        <p>So now, I’m pretty much done with this. I think I learned all I think this project can teach me, and I’ve moved on to other things.</p>
+        <p>This means that no new features, improvements or bugfixes will be made from now on. But the website will stay online, and the repository will be made read-only, but it won’t be deleted, so people can still do what they want with the code. And, maybe, someone really nice will give it a second life?</p>
+        <p>Big thanks to all of you. &lt;3</p>
+	<p>-- Locness</p>
+      </div>
+    </div>
+    <main>
+      <div class="half left">
+        <div class="half-left-content">
+          <h1>Scratch Profile Embed <span class="version-badge">Beta</span></h1>
+          <p>Embed your Scratch profile on your website.<br> Easy and clean.</p>
+            <div class="get-started-form">
+                <input id="username-input" class="username-input" name="username" placeholder="Enter your username" type="text" size="20" maxlength="20" autocomplete="off">
+                <button class="submit" onCLick="startGetCode();">Get started</button>
+            </div>
+            <a class="block-link changelog-link" href="#">View changelog</a>
+            <cite>This has really helped me promote my profile on my blog. It is quick and easy and the presentation is amazing! — <a href="https://scratch.mit.edu/users/Joshuay2" target="_blank" rel="noopener">Joshuay2</a></cite>
+            <div class="bottom">
+              <a class="block-link" href="https://github.com/locness3/scratch-profile-embed" target="_blank" rel="noopener">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg> Open source under MIT license</a>
+            </div>
+        </div>
+      </div>
+      <div class="half right">
+        <div id="initial-content" class="half-right-content">
+          <h2 id="initial-right-heading">Get something like this :</h2>
+          <div id="preview-frame" class="preview-frame-div initial">
+            <iframe width="390" height="500" src='https://locness3.github.io/scratch-profile-embed/#griffpatch' style="border: 1px solid grey; border-radius: 5px;"></iframe>
+          </div>
+          <div id="end-form" class="end-form">
+              <div class="size-group">
+                <div class="width-input-container size-group-input">
+                  <label for="width-input">Width</label>
+                  <input id="width-input" type="number" value="390">
+                </div>
+                <div class="height-input size-group-input">
+                  <label for="height-input">Height</label>
+                  <input id="height-input" class="height-input" type="number" value="500">
+                </div>
+              </div>
+              <button class="submit" onCLick="endGetCode();">Get embed code</button>
+          </div>
+        </div>
+        <div id="getcode" class="half-right-content">
+          <a href="#back" class="back-button" onClick="backToStart();">
+           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+           <line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline>
+           </svg>
+         </a>
+          <h2>Your embed code</h2>
+          <p>Copy and paste this to your website, and enjoy the embed!</p>
+          <p>Please follow <a href="https://scratch.mit.edu/users/locness">Locness</a> on Scratch to be informed of any problems and big changes (using studios where you're invited).</p>
+          <div class="code-block">
+            <pre><code id="embed-code"></code></pre>
+            <button class="copy-button" onclick="copyCodeToClipboard(this)">Copy</button>
+          </div>
+          <div id="emojicom-widget-inline"></div>
+        </div>
+      </div>
+    </main>
+    <div id="modal-overlay" class="modal-overlay" tabindex="-1"></div>
+    <!-- Start emojicom.io widget -->
+    <script>window.emojicom_widget = { campaign: "oBdOLuhbPYRfIXA3dQbD" };</script>
+    <script src="https://cdn.emojicom.io/embed/widget.js" async></script>
+    <!-- End emojicom.io widget -->
+    <!-- Matomo -->
+    <script type="text/javascript">
+      var _paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//locness.hopto.org/matomo/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '1']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+    <!-- End Matomo Code -->
+    <!-- Headway - Changelog -->
+    <script>
+      var HW_config = {
+        selector: ".changelog-link", // CSS selector where to inject the badge
+        account:  "7wrqWx",
+        trigger: ".changelog-link",
+        callbacks: {
+          onShowWidget: function() {
+            if (getViewportWidth() <= 490) {
+              showModalOverlay();
+            }
+          },
+          onHideWidget: function() {
+            hideModalOverlay();
+          }
+        }
+      }
+    </script>
+    <script async src="https://cdn.headwayapp.co/widget.js"></script>
+    <script src="landing.js"></script>
+  </body>
+</html>

@@ -1,0 +1,206 @@
+/* Fonts from Google Fonts - more at https://fonts.google.com */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+@-webkit-keyframes spin {
+  1% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  1% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+#bio,#status {
+  white-space: pre-line;
+  vertical-align: top;
+  max-width: 500px;
+  margin: 0 auto;
+  max-height: 40vh;
+  overflow-y: auto;
+}
+#avatar {
+  display: inline-block;
+  vertical-align: middle;
+  width: 90px;
+  height: 90px;
+}
+#avatar.loading {
+  -webkit-animation-name: spin;
+          animation-name: spin;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+#identity {
+  -webkit-box-shadow: 0px 1px rgba(0, 0, 0, 0.29);
+          box-shadow: 0px 1px rgba(0, 0, 0, 0.29);
+  display: block;
+  height: auto;
+  background-color: #4d97ff;
+  color: #FFFFFF;
+  overflow: auto;
+}
+#name-and-country {
+  display: inline-block;
+  margin-right: auto;
+  text-align: left;
+  vertical-align: middle;
+}
+#username,#country {
+  margin: 5px;
+}
+#username {
+  font-weight: 700;
+}
+#bio-and-status {
+  display: block;
+  text-align: center;
+  margin: 5px;
+}
+h5 {
+  margin-bottom: 0px;
+  margin-top: 12px;
+}
+#bio-container,#status-container {
+  display: inline-block;
+  height: auto;
+  vertical-align: top;
+}
+#featured-project-a {
+  color: inherit;
+  text-decoration: none;
+}
+#featured-project-title {
+  text-align: center;
+  margin: 0;
+  color: inherit;
+  font-weight: bold;
+}
+#featured-project-heading {
+  text-align: center;
+}
+#view-profile {
+  position: relative;
+  display: inline-table;
+  white-space: nowrap;
+  float: right;
+  height: 90px;
+}
+#view-profile-link-container {
+  display: table-cell;
+  vertical-align: middle;
+  width: auto;
+  padding: 5px;
+}
+.btn {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  display: inline-block;
+  padding: 5px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  color: #4d97ff !important;
+  text-decoration: none;
+  font-weight: bold;
+  -webkit-box-shadow: 0px 1px rgba(0, 0, 0, 0.37);
+          box-shadow: 0px 1px rgba(0, 0, 0, 0.37);
+}
+.btn:hover {
+  background-color: #4d97ff;
+  color: #ffffff !important;
+  border: 1px solid #ffffff;
+}
+.btn:active {
+  transform: translateY(3px);
+  -webkit-transform: translateY(3px);
+  -ms-transform: translateY(3px);
+  -moz-transform: translateY(3px);
+  -o-transform: translateY(3px);
+}
+@media only screen and (max-width: 800px) {
+  #bio-container,#status-container {
+    display: block;
+  }
+}
+.error {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #4d97ff;
+  color: #ffffff;
+  z-index: 150;
+}
+.error-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-height: 500px;
+  margin: 20px;
+}
+
+
+#loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(77, 151, 255, 0.8);
+  z-index: 1;
+}
+
+.loader-container {
+  display: table;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+.loader-container .loader {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
+}
+
+#loading.finished, .hide {
+  display: none;
+}
+.top-banner {
+  background-color: mediumvioletred;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  text-align: center;
+  color: white;
+}
+.top-banner a {
+  color: white;
+}
